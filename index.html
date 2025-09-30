@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quien Quiere Ser Legendario</title>
+    <!-- Favicons -->
+    <link rel="icon" href="favicon-darker.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Menú de inicio -->
+    <div id="startMenu" class="start-menu">
+        <div class="menu-content">
+            <div class="menu-title">
+                <div class="flux">¿Quien quiere ser</div>
+                <div class="neon">legendario?</div>
+            </div>
+            <div class="menu-options">
+                <div class="menu-option" id="userMode">
+                    <div class="option-icon">👤</div>
+                    <div class="option-text">
+                        <h2>Modo Usuario</h2>
+                        <p>Juega y guarda tus estadísticas</p>
+                    </div>
+                </div>
+                <div class="menu-option" id="guestMode">
+                    <div class="option-icon">🎮</div>
+                    <div class="option-text">
+                        <h2>Modo Invitado</h2>
+                        <p>Juega sin guardar estadísticas</p>
+                    </div>
+                </div>
+                <a href="stats-shadcn.html" class="menu-option">
+                    <div class="option-icon">📊</div>
+                    <div class="option-text">
+                        <h2>Estadísticas</h2>
+                        <p>Ver estadísticas detalladas</p>
+                    </div>
+                </a>
+                <a href="leaderboard.html" class="menu-option">
+                    <div class="option-icon">🏆</div>
+                    <div class="option-text">
+                        <h2>Clasificaciones</h2>
+                        <p>Ranking de jugadores y récords</p>
+                    </div>
+                </a>
+                <a href="questions-list.html" class="menu-option">
+                    <div class="option-icon">📝</div>
+                    <div class="option-text">
+                        <h2>Banco de Preguntas</h2>
+                        <p>Ver todas las preguntas organizadas</p>
+                    </div>
+                </a>
+                <div class="menu-option" id="settingsBtn">
+                    <div class="option-icon">⚙️</div>
+                    <div class="option-text">
+                        <h2>Ajustes</h2>
+                        <p>Personaliza el juego</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para nombre de usuario -->
+    <div id="usernameModal" class="modal">
+        <div class="modal-content dark-theme">
+            <h2>Ingresa tu nombre de usuario</h2>
+            <input type="text" id="usernameInput" placeholder="Nombre de usuario">
+            <div class="username-buttons">
+                <button id="backToMenuBtn" class="menu-btn menu-btn-secondary">Volver</button>
+                <button id="startGame" class="menu-btn">Comenzar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de ajustes -->
+    <div id="settingsModal" class="modal" style="display: none;">
+        <div class="modal-content settings-modal">
+            <span class="close" id="closeSettings">&times;</span>
+            <h2>Ajustes del Juego</h2>
+            
+            <div class="settings-section">
+                <h3>Temporizador</h3>
+                <div class="setting-item">
+                    <label for="timerDuration">Duración (segundos):</label>
+                    <input type="number" id="timerDuration" min="10" max="120" value="45">
+                </div>
+                <div class="setting-item">
+                    <label for="showTimer">Mostrar temporizador</label>
+                    <input type="checkbox" id="showTimer" checked>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Sonido</h3>
+                <div class="setting-item">
+                    <label for="effectsVolume">Volumen de efectos:</label>
+                    <input type="range" id="effectsVolume" min="0" max="100" value="70" class="volume-slider">
+                    <span class="volume-value">70%</span>
+                </div>
+                <div class="setting-item">
+                    <label for="musicVolume">Volumen de música:</label>
+                    <input type="range" id="musicVolume" min="0" max="100" value="50" class="volume-slider">
+                    <span class="volume-value">50%</span>
+                </div>
+                <div class="setting-item">
+                    <label for="enableSpeech">Activar narrador:</label>
+                    <input type="checkbox" id="enableSpeech" checked>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Premios</h3>
+                <div class="prize-settings">
+                    <div class="prize-column">
+                        <div class="setting-item">
+                            <label for="prize1">Nivel 1:</label>
+                            <input type="number" id="prize1" min="1" step="1" value="100">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize2">Nivel 2:</label>
+                            <input type="number" id="prize2" min="1" step="1" value="250">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize3">Nivel 3:</label>
+                            <input type="number" id="prize3" min="1" step="1" value="500">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize4">Nivel 4:</label>
+                            <input type="number" id="prize4" min="1" step="1" value="750">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize5">Nivel 5 (Seguro):</label>
+                            <input type="number" id="prize5" min="1" step="1" value="1500">
+                        </div>
+                    </div>
+                    <div class="prize-column">
+                        <div class="setting-item">
+                            <label for="prize6">Nivel 6:</label>
+                            <input type="number" id="prize6" min="1" step="1" value="2500">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize7">Nivel 7:</label>
+                            <input type="number" id="prize7" min="1" step="1" value="5000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize8">Nivel 8:</label>
+                            <input type="number" id="prize8" min="1" step="1" value="10000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize9">Nivel 9:</label>
+                            <input type="number" id="prize9" min="1" step="1" value="15000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize10">Nivel 10 (Seguro):</label>
+                            <input type="number" id="prize10" min="1" step="1" value="20000">
+                        </div>
+                    </div>
+                    <div class="prize-column">
+                        <div class="setting-item">
+                            <label for="prize11">Nivel 11:</label>
+                            <input type="number" id="prize11" min="1" step="1" value="30000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize12">Nivel 12:</label>
+                            <input type="number" id="prize12" min="1" step="1" value="50000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize13">Nivel 13:</label>
+                            <input type="number" id="prize13" min="1" step="1" value="100000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize14">Nivel 14:</label>
+                            <input type="number" id="prize14" min="1" step="1" value="300000">
+                        </div>
+                        <div class="setting-item">
+                            <label for="prize15">Nivel 15 (Final):</label>
+                            <input type="number" id="prize15" min="1" step="1" value="1000000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-buttons">
+                <button id="saveSettings" class="menu-btn">Guardar</button>
+                <button id="resetSettings" class="menu-btn menu-btn-danger">Restablecer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de estadísticas -->
+    <div id="statsModal" class="modal" style="display: none;">
+        <div class="modal-content stats-content">
+            <span class="close" id="closeStats">&times;</span>
+            <h2>Estadísticas</h2>
+            <div id="statsContent"></div>
+        </div>
+    </div>
+
+    <div class="background-effects">
+        <div class="light-beam" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="light-beam" style="left: 25%; animation-delay: 1s;"></div>
+        <div class="light-beam" style="left: 40%; animation-delay: 2s;"></div>
+        <div class="light-beam" style="left: 55%; animation-delay: 0.5s;"></div>
+        <div class="light-beam" style="left: 70%; animation-delay: 1.5s;"></div>
+        <div class="light-beam" style="left: 85%; animation-delay: 2.5s;"></div>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <!-- Título del juego -->
+        <div class="game-title">
+            <div class="flux">Quien quiere ser</div>
+            <div class="neon">legendario</div>
+        </div>
+        
+        <div class="game-controls">
+            <button id="exitGameBtn" class="game-control-btn exit-btn" title="Volver al menú principal">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+            </button>
+            <button id="startTimerBtn" class="game-control-btn timer-btn" title="Iniciar temporizador">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </button>
+            <button id="gameSettingsBtn" class="game-control-btn settings-btn" title="Ajustes">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="game-content">
+            <div class="question-section">
+                <!-- Gráfica del público (ahora arriba) -->
+                <div id="audienceChart" class="audience-chart" style="display: none;"></div>
+
+                <!-- Mensaje Comodín Llamada (Ahora encima de la pregunta) -->
+                <div id="phoneMessageContainer" class="phone-message-container" style="display: none;"></div>
+                
+                <div class="question-container">
+                    <div class="timer" id="timer">30</div>
+                    <div class="inner-container">
+                        <div class="question-text" id="question">Pregunta aparecerá aquí</div>
+                    </div>
+                </div>
+                
+                <div class="answers-container">
+                    <button class="answer-btn" data-option="A"><div></div><span class="answer-text"></span></button>
+                    <button class="answer-btn" data-option="B"><div></div><span class="answer-text"></span></button>
+                    <button class="answer-btn" data-option="C"><div></div><span class="answer-text"></span></button>
+                    <button class="answer-btn" data-option="D"><div></div><span class="answer-text"></span></button>
+                </div>
+            </div>
+
+            <div class="money-tree">
+                <div class="lifelines">
+                    <button id="fifty" class="lifeline-btn" title="50:50"></button>
+                    <button id="audience" class="lifeline-btn" title="Ayuda del Público"></button>
+                    <button id="phone" class="lifeline-btn" title="Llamada a un Amigo"></button>
+                </div>
+                <div class="money-level" data-level="15">1.000.000</div>
+                <div class="money-level" data-level="14">300.000</div>
+                <div class="money-level" data-level="13">100.000</div>
+                <div class="money-level" data-level="12">50.000</div>
+                <div class="money-level" data-level="11">30.000</div>
+                <div class="money-level" data-level="10">20.000</div>
+                <div class="money-level" data-level="9">15.000</div>
+                <div class="money-level" data-level="8">10.000</div>
+                <div class="money-level" data-level="7">5.000</div>
+                <div class="money-level" data-level="6">2.500</div>
+                <div class="money-level" data-level="5">1.500</div>
+                <div class="money-level" data-level="4">750</div>
+                <div class="money-level" data-level="3">500</div>
+                <div class="money-level" data-level="2">250</div>
+                <div class="money-level" data-level="1">100</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Efectos de sonido -->
+    <audio id="tickSound" src="https://www.soundjay.com/buttons/sounds/button-09.mp3"></audio>
+    <audio id="correctSound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+    <audio id="wrongSound" src="https://www.soundjay.com/buttons/sounds/button-11.mp3"></audio>
+    <audio id="lifelineSound" src="https://www.soundjay.com/buttons/sounds/button-12.mp3"></audio>
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="suspenseMusic" src="https://res.cloudinary.com/pcsolucion/video/upload/v1746251483/Who_Wants_to_be_a_Millionaire_Suspense_-_Sound_Effect_HD_bevuyz.mp3"></audio>
+    <audio id="win1000Music" src="https://res.cloudinary.com/pcsolucion/video/upload/v1746251907/1_000_Win_-_Who_Wants_to_Be_a_Millionaire__fxo7e0.mp3"></audio>
+    <audio id="firstQuestionsMusic" src="https://res.cloudinary.com/pcsolucion/video/upload/v1746252694/100-_1000_Questions_-_Who_Wants_to_Be_a_Millionaire__bvtpis.mp3"></audio>
+    <audio id="wrongAnswerMusic" src="https://res.cloudinary.com/pcsolucion/video/upload/v1746253105/Who_Wants_to_Be_a_Millionaire__-_100_500_Wrong_Answer_SOUND_EFFECT_ojyzma.mp3"></audio>
+    <audio id="correctAnswerMusic" src="https://res.cloudinary.com/pcsolucion/video/upload/v1746253391/correct-answer-101soundboards_xldr4h.mp3"></audio>
+
+    <!-- Sonido de llamada para comodín -->
+    <audio id="phoneCallSound" src="https://res.cloudinary.com/pcsolucion/video/upload/v1746332872/phone-calling-1b_c8mxkd.mp3"></audio>
+
+    <!-- Música para preguntas medias/altas -->
+    <audio id="midGameMusic" loop src="https://res.cloudinary.com/pcsolucion/video/upload/v1746333914/125_000_Question_-_Who_Wants_to_Be_a_Millionaire__jwdees.mp3"></audio>
+
+    <!-- Modal para la llamada a un amigo -->
+    <div id="phoneModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="closePhoneModal" class="close">&times;</span>
+            <div id="phoneModalMessage"></div>
+        </div>
+    </div>
+
+    <!-- Script comentario sobre comportamiento de temporizador -->
+    <!-- El temporizador solo comenzará manualmente al presionar el botón de inicio -->
+    <!-- Cuando el temporizador llega a cero, no finaliza el juego ni tiene consecuencias -->
+
+    <!-- Cambiar a módulos ES6 -->
+    <script type="module" src="main.js"></script>
+</body>
+</html> 
