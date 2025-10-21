@@ -340,6 +340,39 @@ export const questionsBase = [
         difficulty: 3
     },
     {
+        question: "¿Cual de los siguientes artefactos nos da puntos de atributos adicionales?",
+        options: {
+            A: "Vestiduras de vampiro",
+            B: "Vendas para los pies de acróbata",
+            C: "Corona vieja",
+            D: "Botas del credo"
+        },
+        correct: "C",
+        difficulty: 2
+    },
+    {
+        question: "¿Cual de los siguientes items viene con la perk de Movimiento renovador?",
+        options: {
+            A: "Botas de acróbata",
+            B: "Cubrerodillas de Koya",
+            C: "Pendiente Insuperable",
+            D: "Sed Insaciable"
+        },
+        correct: "C",
+        difficulty: 2
+    },
+    {
+        question: "¿Cual de los siguientes conjuntos de equipo se puede conseguir a cambio de monedas obtenidas en Catacumbas?",
+        options: {
+            A: "Conjunto de Taumaturgo",
+            B: "Conjunto Tenaz",
+            C: "Conjunto Enfurecido",
+            D: "Conjunto de Sobrecarga"
+        },
+        correct: "D",
+        difficulty: 2
+    },
+    {
         question: "¿Como se llama la embarcación de Isabella?",
         options: {
             A: "San Cristóbal",
@@ -384,12 +417,12 @@ export const questionsBase = [
         difficulty: 1
     },
     {
-        question: "¿Cuál de los siguientes artefactos viene con la perk de Aversión física?",
+        question: "¿Cuál es el único artefacto que viene por defecto con la perk de Consciencia aguda?",
         options: {
-            A: "Guantes de duelo",
-            B: "Zapatos de cuero alados",
-            C: "Sombrero de mago gris",
-            D: "Guantes de gul"
+            A: "Bebesangre",
+            B: "Anj",
+            C: "Banda elemental",
+            D: "Fénix"
         },
         correct: "C",
         difficulty: 2
@@ -593,14 +626,14 @@ export const questionsBase = [
         difficulty: 2
     },
     {
-        question: "¿Cuántos puntos de atributos para que podamos distribuir nos dá tener nivel 65 (sin comida ni ropa, solo el nivel)?",
+        question: "¿Cuántos puntos de atributos para que podamos distribuir nos dá tener nivel 70 (sin comida ni artefactos que den atributos, solo el nivel)?",
         options: {
-            A: "220",
-            B: "240",
-            C: "260",
-            D: "280"
+            A: "560",
+            B: "500",
+            C: "450",
+            D: "510"
         },
-        correct: "A",
+        correct: "D",
         difficulty: 2
     },
     {
