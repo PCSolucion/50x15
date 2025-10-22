@@ -428,6 +428,61 @@ export const questionsBase = [
         difficulty: 2
     },
     {
+        question: "¿Cómo se llama la perk que otorga coraje al realizar ataques pesados y ligeros cuerpo a cuerpo pero te hace recibir más daño con coraje activo?",
+        options: {
+            A: "Impasible",
+            B: "Armonía",
+            C: "Emboscada",
+            D: "Imparable"
+        },
+        correct: "D",
+        difficulty: 2
+    },
+    {
+        question: "¿Cómo se llama la perk que otorga coraje al realizar ataques pesados y ligeros cuerpo a cuerpo pero te hace recibir más daño con coraje activo?",
+        options: {
+            A: "Impasible",
+            B: "Armonía",
+            C: "Emboscada",
+            D: "Imparable"
+        },
+        correct: "D",
+        difficulty: 2
+    },
+    {
+        question: "¿Qué conjunto de equipo aplica coraje a su portador?",
+        options: {
+            A: "Conjunto de Taumaturgo",
+            B: "Conjunto Enfurecido",
+            C: "Conjunto Tenaz",
+            D: "Conjunto Sobrecargado"
+        },
+        correct: "C",
+        difficulty: 1
+    },
+    {
+        question: "¿Cuál de los siguientes artefactos genera amenaza sin necesidad d llevar equipada cornalina?",
+        options: {
+            A: "El Impasible",
+            B: "Ingenio",
+            C: "Botas del Credo",
+            D: "Piedra de Poder"
+        },
+        correct: "B",
+        difficulty: 1
+    },
+    {
+        question: "¿Cómo se llama la perk que hace que hagas más daó a un objetivo que se encuentra silenciado?",
+        options: {
+            A: "Reflejo de odio",
+            B: "Consumir",
+            C: "Agresión Liberadora",
+            D: "Peligro Sofocante"
+        },
+        correct: "D",
+        difficulty: 3
+    },
+    {
         question: "¿Cuál es el único artefacto que viene por defecto con la perk de Consciencia aguda?",
         options: {
             A: "Bebesangre",
