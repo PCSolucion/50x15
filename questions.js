@@ -483,6 +483,94 @@ export const questionsBase = [
         difficulty: 3
     },
     {
+        "question": "¿Cómo se llama la facción que resguarda el conocimiento ancestral y la magia?",
+        "options": {
+            "A": "Los Depredadores",
+            "B": "El Sindicato",
+            "C": "La Marina Carmesí",
+            "D": "Los Merodeadores"
+        },
+        "correct": "B",
+        "difficulty": 2
+    },
+    {
+        "question": "¿Qué tipo de daño es más efectivo contra Zhou Taiying, la jefa final de Dynasty Shipyard?",
+        "options": {
+            "A": "Daño de Fuego",
+            "B": "Daño de Hielo",
+            "C": "Daño Arcano",
+            "D": "Daño de Naturaleza"
+        },
+        "correct": "C",
+        "difficulty": 2
+    },
+    {
+        "question": "¿Cuál es el límite semanal de Umbral Crystals que puedes acumular en la Temporada 10?",
+        "options": {
+            "A": "1,000",
+            "B": "2,000",
+            "C": "4,000",
+            "D": "Sin límite"
+        },
+        "correct": "C",
+        "difficulty": 1
+    },
+    {
+        "question": "¿Cuál es el Gear Score mínimo requerido para poder mejorar equipo con Umbral Crystals?",
+        "options": {
+            "A": "600",
+            "B": "650",
+            "C": "700",
+            "D": "725"
+        },
+        "correct": "C",
+        "difficulty": 1
+    },
+    {
+        "question": "¿Cuál es el nombre del jefe Spriggan que se encuentra en la arena Monoecious?",
+        "options": {
+            "A": "Zygoramet",
+            "B": "Spriggan el Antiguo",
+            "C": "Guardián del Eternum",
+            "D": "El Primordial"
+        },
+        "correct": "A",
+        "difficulty": 1
+    },
+    {
+        "question": "¿Cuál es la puntuación mínima requerida en una expedición mutada para obtener clasificación de Oro?",
+        "options": {
+            "A": "25,000 puntos",
+            "B": "40,000 puntos",
+            "C": "50,000 puntos",
+            "D": "75,000 puntos"
+        },
+        "correct": "C",
+        "difficulty": 1
+    },
+    {
+        "question": "¿Cuántos metros de radio tiene el área de efecto de la habilidad Oblivion del Void Gauntlet?",
+        "options": {
+            "A": "3 metros",
+            "B": "5 metros",
+            "C": "8 metros",
+            "D": "10 metros"
+        },
+        "correct": "B",
+        "difficulty": 2
+    },
+    {
+        "question": "¿Cuál es la mecánica principal del jefe Zygoramet en la arena Monoecious?",
+        "options": {
+            "A": "Invulnerabilidad periódica",
+            "B": "Jaula con regeneración",
+            "C": "Enraizamiento permanente",
+            "D": "Clonación de enemigos"
+        },
+        "correct": "B",
+        "difficulty": 2
+    },
+    {
         question: "¿Cuál es el único artefacto que viene por defecto con la perk de Consciencia aguda?",
         options: {
             A: "Bebesangre",
